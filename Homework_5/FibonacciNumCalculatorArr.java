@@ -15,13 +15,13 @@ public class FibonacciNumCalculatorArr {
 
 		int position = Integer.valueOf(input);
 
-		long firstTimestamp = System.currentTimeMillis();
+		long firstTimestamp = System.nanoTime();
 
 		System.out.println("The Fibonacci number on position " + position + " equals to " + calculateFibonacciNum(position));
 
-		long secondTimestamp = System.currentTimeMillis();
+		long secondTimestamp = System.nanoTime();
 
-		System.out.println("It took " + (secondTimestamp - firstTimestamp) + " ms to execute the algorithm");
+		System.out.println("It took " + (secondTimestamp - firstTimestamp) + " nanos to execute the algorithm");
 	}
 
 	public static long calculateFibonacciNum (int position) {
