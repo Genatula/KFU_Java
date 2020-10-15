@@ -24,5 +24,19 @@ public class ProblemTwentyOne_LCD {
 		}
 		long lcd = product / gcd;
 		System.out.println("The LCD equals to " + lcd);
-	}
+
+		// long[] nums = new long[(int)product + 1];
+		// nums[0] = 1;
+		// for (int i = 1; i <= product; i++) {
+		// 	nums[i] = i;
+		// }
+		// lcd = Integer.MAX_VALUE;
+		// for (long num : nums) {
+		// 	if ((num % firstNum) == 0 && (num % secondNum) == 0) {
+		// 		lcd = num;
+		// 		break;
+		// 	}
+		// }
+		// System.out.println("The LCD equals to " + lcd);
+ 	}
 }
