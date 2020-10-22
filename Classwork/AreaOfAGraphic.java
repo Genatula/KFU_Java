@@ -13,39 +13,29 @@ public class AreaOfAGraphic {
 		System.out.println("Enter the coefficent of proximity: ");
 		int n = scan.nextInt();
 
-		System.out.println("Enter the intended method (rectangle, trapezoid, Simpson's rule): ");
-		String method = scan.next();
-
 		double dx = (xb - xa) / (double)n;
 
 		double area = 0.0;
 
-		switch (method) {
-			case "rectangle":
-				if (dx != 0) {
-					for (double x0 = xa; x0 <= xb; x0 += dx) {
-						area += calcRectangleArea(dx, calcF(x0));
-					}
-				}
-				break;
-			case "trapezoid":
-				if (dx != 0) {
-					for (double x0 = xa; x0 <= xb; x0 += dx) {
-						area += calcTrapezoidArea(dx, calcF(x0), calcF(x0 + dx));
-					}
-				}
-				break;
-			case "Simpson's rule":
-				if (dx != 0) {
-					area = calcSimpsonRule(xa, xb, dx, n);
-				}
-				break;
-			default:
-				System.out.println("Unknown command");
+		if (dx != 0) {
+			for (double x0 = xa; x0 <= xb; x0 += dx) {
+				area += calcRectangleArea(dx, calcF(x0));
+			}
+
+			System.out.printf("The area equals to %.3f \n", area);
+			area = 0.0;
+
+			for (double x0 = xa; x0 <= xb; x0 += dx) {
+				area += calcTrapezoidArea(dx, calcF(x0), calcF(x0 + dx));
+			}
+
+			System.out.printf("The area equals to %.3f \n", area);
+			area = 0.0;
+
+			area = calcSimpsonRule(xa, xb, dx, n);
+
+			System.out.printf("The area equals to %.3f \n", area);
 		}
-
-		System.out.printf("The area equals to %.3f \n", area);
-
 	}
 
 	public static double calcF(double x) {

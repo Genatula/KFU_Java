@@ -10,18 +10,18 @@ public class Notebook {
             String command = sc.nextLine();
             switch (command) {
                 case "add":
-                    if (counter < notes.length && notes[notes.length - 1] == null) {
+                    if (notes[notes.length - 1] == null) {
                         add(counter, notes, sc);
                         if (counter != 999) {
                             counter++;
                         }
                     }
-                    else if (counter == 999 && notes[counter] != null) {
+                    else {
                         System.out.println("The notebook is full, please remove something");
                     }
                     break;
                 case "remove":
-                    if (counter >= 0 && notes[0] != null) {
+                    if (notes[0] != null) {
                         if (counter > 0) {
                             counter--;
                         }
